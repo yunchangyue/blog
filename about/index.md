@@ -3,4 +3,5 @@ layout: page
 type: about
 ---
 
-Building...
+<div class="avator"></div>
+

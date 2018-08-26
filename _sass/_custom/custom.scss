@@ -1,1 +1,17 @@
 // Custom styles.
+// $avatar-url: '{{site.baseurl}}/assets/images/avator_430.jpg';
+
+.avator {
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url($avatar-url);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}

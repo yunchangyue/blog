@@ -7,6 +7,7 @@
 $scheme    : '{{ site.scheme | default: Muse }}';
 $variables : base $scheme custom;
 $mixins    : base $scheme custom;
+$avatar-url: '{{site.baseurl}}/assets/images/avatar_430.jpg';
 
 
 {% include _helper/config_map.html %}
