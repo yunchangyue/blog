@@ -4,10 +4,12 @@
 .avator {
   width: 102px;
   height: 102px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   overflow: hidden;
   background-image: url($avatar-url);
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
   background-repeat: no-repeat;
   margin: 0 auto;
 }
