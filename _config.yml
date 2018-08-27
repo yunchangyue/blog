@@ -5,8 +5,8 @@
 
 # Site
 title: 与油腻斗争到底
-subtitle:
-description:
+subtitle: 前端开发小学生
+description: 工作近10年，接触过java, php, html, css ,javascript, 现在正在向python进军
 author: 前端大法好
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: zh-Hans
@@ -79,7 +79,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, yunchangyue"
+keywords: "前端,frontend, python, html, css, javascript, js,yunchangyue"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
