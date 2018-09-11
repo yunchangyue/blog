@@ -22,7 +22,7 @@ tags:
 `iframe`和`video`都有坑，`video`的坑不是今天的主题，以后再说，今天主要说说`iframe`在ios中(主要是safari及safari内核的系列浏览器)的坑(在 android下表现相对较好)。
 
 # 第一坑: iframe在ios下无法滚动
-正常情况下，如果不设置`scrolling="no"`,iframe引用页面内容超过iframe高宽，则会自动滚动。但是在ios无效，这并不是某个版本的问题，到本稿发稿时，ios最高版本为ios11.4，问题依然存在，解决的办法为：
+正常情况下，如果不设置`scrolling="no"`,iframe引用页面内容超过iframe高宽，则会自动滚动。但是在ios无效，这并不是某个版本的问题，到本稿发稿时，ios最高版本为ios11.4，问题依然存在，解决的办法为：
 
 给 iframe一个父级div, 给div设置如下样式：
 ```css
