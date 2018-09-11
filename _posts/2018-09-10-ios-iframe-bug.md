@@ -63,14 +63,29 @@ html代码如下：
 
 解决思路如下:
 
-1. 将 iframe 设置属性`scrolling="no"`,注意要判断平台是`ios`才添加该属性，否则该属性会导致在android下iframe无法滚动,这是关键性一步。
-2. 设置 iframe 样式(其实样式不是必需的，在我本机测试不添加样式也可以正常展示，但为了通用和保险，加上为好):
+- 将 iframe 设置属性`scrolling="no"`,注意要判断平台是`ios`才添加该属性，否则该属性会导致在android下iframe无法滚动,这是关键性一步:
+```html
+  <iframe src="" scrolling="no"></iframe>
+```
+- 设置 iframe 样式(其实样式不是必需的，在我本机测试不添加样式也可以正常展示，但为了通用和保险，加上为好):
 ```css
 iframe {
-  width: 100%;
-  max-width: 100%;
+    width: 100%;
+    max-width: 100%;
 }
-``` 
+```
+
+# 第四坑: iframe页面的meta:viewport会继承父页面
+做过移动端开发的同学应该比较清楚，一般移动端页面都会添加一个meta:viewport标签：
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+```
+我们为了在各机型上表现一致，有时候会通过js动态修改这个值。业界比较有名的有<a href="https://github.com/amfe/lib-flexible" target="_blank">淘宝flexible方案</a>,它会根据设备dpr的不同而设置不同的缩放规则。
+
+这个时候，如果子页面的缩放规则与父页面不同，则强制按照父页面规则进行缩放，所以实际表现有可能会被放大或者缩小，达不到预期的效果。
+
+这个事情相当蛋疼，设置什么值都不合适，只要父子页面规则不匹配，就会有问题。
+
 
 # 结语
 目前暂时发现iframe这些问题，移动端还有一些其它的问题,如 video, 事件等，回头有时间再出续篇。
