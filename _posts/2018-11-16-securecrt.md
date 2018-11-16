@@ -34,7 +34,7 @@ tags:
 vi ~/.gitconfig
 ```
 添加配置项如下：
-```gitconfig
+```git
 [core]
 	quotepath = false
 [gui]
@@ -70,4 +70,8 @@ export LESSCHARSET=UTF-8
 - 保存退出
 
 这个时候再 vim 打开文件就没有乱码问题了。
+
+
+# 结束语
+为了解决这个问题，明白到问题所在，还是花了一些时间。所以记录一篇文章在此，希望有缘人可以看到，并能够帮助到你，这就最好了。
 
