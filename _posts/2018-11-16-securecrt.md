@@ -34,7 +34,7 @@ tags:
 vi ~/.gitconfig
 ```
 添加配置项如下：
-```git
+```shell
 [core]
 	quotepath = false
 [gui]
