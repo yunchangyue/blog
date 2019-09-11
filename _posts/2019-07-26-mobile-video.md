@@ -70,7 +70,7 @@ iOS10中新增了对内联播放支持(添加`webkit-playsinline`和`playsinline
 ## （三.二） 安卓下QQ及微信x5内核浏览器启用同屏层问题
 QQ及微信内置浏览器视频播放默认会全屏播放且video置于最上层（除非申请白名单），且播放完成时不会自动关闭播放器而是播放腾讯视频广告或者腾讯视频推荐内容。
 
-可以通过给video添加`x5-video-player-type = 'true'` 属性启用同屏层，会小窗口播放，`x5-video-player-fullscreen = 'true'`启用全屏。
+可以通过给video添加`x5-video-player-type = 'h5'` 属性启用同屏层，会小窗口播放，`x5-video-player-fullscreen = 'true'`启用全屏。
 
 >注意：通过测试发现，启用同屏层之后，在`QQ轻聊版`浏览器中会导致闪退，需谨慎使用。
 
