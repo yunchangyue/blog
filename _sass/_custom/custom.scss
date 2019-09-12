@@ -16,7 +16,6 @@
 
 .text-center {
   text-align: center;
-  
 }
 .info-container {
   margin: 20px auto;
@@ -33,4 +32,8 @@
 
 .mw-100p {
   max-width: 100%;
+}
+
+a+a {
+  margin-left: .6em;
 }

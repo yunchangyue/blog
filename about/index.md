@@ -13,7 +13,7 @@ type: about
       性别：男的
     </li>
     <li class="item">
-      email：<a href="mailto:187351549@qq.com">187351549@qq.com</a>
+      email：<a href="mailto:187351549@qq.com">187351549@qq.com</a> <a href="mailto:yunchangyue@outlook.com">yunchangyue@outlook.com</a>
     </li>
     <li class="item">
       目前就职于狐厂
