@@ -111,7 +111,11 @@ fLoadKeywords(node: Object, resolve: Function, search_str?: string) {
 fFilterKeywords(val: string) {
     // 清除节点
     const tree = this.$refs.tree_keywords.$refs.tree;
-    tree.remove(this.tree.data_level1);
+    if (this.tree.data_level1 && this.tree.data_level1.length) {
+      this.tree.data_level1.forEach(d => {
+        tree.remove(d);
+      });
+    }
     
     this.fLoadKeywords([], this.tree.resolve, val);
 }
