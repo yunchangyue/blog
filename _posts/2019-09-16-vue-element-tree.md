@@ -98,7 +98,7 @@ fLoadKeywords(node: Object, resolve: Function, search_str?: string) {
       const trans_data = transforms.transformKeywords(data.content, node.id);
       
       // 将根节点数据暂存起来
-      if (node.id === 0) {
+      if (node.id === 0 || node.length === 0) {
         this.tree.data_level1 = trans_data;
       }
       resolve(trans_data);
