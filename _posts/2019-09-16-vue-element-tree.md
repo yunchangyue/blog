@@ -87,8 +87,8 @@ fLoadKeywords(node: Object, resolve: Function, search_str?: string) {
       this.tree.resolve = resolve;
     }
     let params = {};
-    if (node.id) {
-      params.id = node.id;
+    if (node.data && node.data.id) {
+      params.id = node.data.id;
     }
     if (search_str) {
       params.name = search_str;
