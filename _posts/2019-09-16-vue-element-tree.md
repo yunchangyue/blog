@@ -50,17 +50,17 @@ tree组件提供了一个属性`isLeaf`来代表当前是否叶子节点，但�
 # 如何手动调用load函数
 `load`函数其实很好定义，代码如下：
 ```typescript
-fLoadKeywords(node: Object, resolve: Function, search_str?: string) {
+fLoadKeywords(node: Object, resolve: Function, searchStr?: string) {
     let params = {};
     if (node.id) {
       params.id = node.id;
     }
     if (search_str) {
-      params.name = search_str;
+      params.name = searchStr;
     }
     this.fKeywordsAction(params).then(data => {
-      const trans_data = transforms.transformKeywords(data.content, node.id);
-      resolve(trans_data);
+      const transData = transforms.transformKeywords(data.content, node.id);
+      resolve(transData);
     });
 }
 ```
@@ -81,7 +81,7 @@ fFilterKeywords(val: string) {
 
 那我们如何得到resolve函数？聪明的同学可能已经想到了，我们在load函数第一次被tree组件调用时，将resolve和根节点数据暂存起来。我们将`load`函数修改如下：
 ```typescript
-fLoadKeywords(node: Object, resolve: Function, search_str?: string) {
+fLoadKeywords(node: Object, resolve: Function, searchStr?: string) {
     // 将resolve函数存储在别的地方，在搜索的时候会使用
     if (!this.tree.resolve) {
       this.tree.resolve = resolve;
@@ -91,7 +91,7 @@ fLoadKeywords(node: Object, resolve: Function, search_str?: string) {
       params.id = node.data.id;
     }
     if (search_str) {
-      params.name = search_str;
+      params.name = searchStr;
     }
     this.fKeywordsAction(params).then(data => {
       // console.log(data);
@@ -99,7 +99,7 @@ fLoadKeywords(node: Object, resolve: Function, search_str?: string) {
       
       // 将根节点数据暂存起来
       if (node.id === 0 || node.length === 0) {
-        this.tree.data_level1 = trans_data;
+        this.tree.dataLevel1 = transData;
       }
       resolve(trans_data);
     });
@@ -110,9 +110,9 @@ fLoadKeywords(node: Object, resolve: Function, search_str?: string) {
 ```typescript
 fFilterKeywords(val: string) {
     // 清除节点
-    const tree = this.$refs.tree_keywords.$refs.tree;
-    if (this.tree.data_level1 && this.tree.data_level1.length) {
-      this.tree.data_level1.forEach(d => {
+    const tree = this.$refs.treeKeywords.$refs.tree;
+    if (this.tree.dataLevel1 && this.tree.dataLevel1.length) {
+      this.tree.dataLevel1.forEach(d => {
         tree.remove(d);
       });
     }
